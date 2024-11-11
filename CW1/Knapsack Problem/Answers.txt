@@ -1,0 +1,39 @@
+1. Jakie rozwiązania i jaką wartość funkcji oceny uzyskano? Czy uzyskano takie same rozwiązania?
+
+N = 7
+W = [93 71 72 96 70 80 81]
+P = [116 151 146 158 142 146  94]
+MAX = 281.5
+Heuristic answer:
+    Masses: [71, 70, 72]
+    Prices: [151, 142, 146]
+Brute Force answer:
+    Masses: [71, 72, 96]
+    Prices: [151, 146, 158]
+Delta = 16
+Error Percentage = 3.52%
+
+Dla niektórych testów wynik heurystyki jest mniejszy od wyniku uzyskanego przez przegląd wyczerpujący,
+jednak procent błędu nie jest duży.
+
+
+2. Jak dużą instancję problemu (liczba przedmiotów) da się rozwiązać w około minutę metodą przeglądu wyczerpującego?
+Ile czasu zajmie rozwiązanie tego problemu metodą zachłanną (używając heurystyki)?
+
+W około minutę da się rozwiązać problem dla 23 przedmiotów. Czas rozwiązania rośnie wykładniczo;
+dla 27 przedmiotów to już około 16 minut. Heurystyka, mimo że nie zawsze prowadzi do najlepszych rozwiązań,
+potrafi rozwiązać ten problem natychmiast dla 100 tys. przedmiotów, licząc to w 0.3 sekundy.
+
+3.Jak bardzo wydłuży obliczenia dodanie jeszcze jednego przedmiotu?
+Dla przeglądu wyczerpującego dodanie jednego nowego przedmiotu wydłuży czas obliczeń dwukrotnie.
+W przypadku heurystyki zmiana ta jest praktycznie niezauważalna.
+
+4. Jakie wnioski można wyciągnąć na podstawie wyników tego ćwiczenia?
+
+    1. Przegląd każdej kombinacji, chociaż gwarantuje optymalną odpowiedź, w praktyce jest mało użyteczny.
+       Dla liczby przedmiotów równiej 54 rozwiązanie tego problemu zajęłoby około 100 lat.
+    2. Heurystyka, choć nie gwarantuje najlepszego rozwiązania, bardzo często zwraca prawidłowe odpowiedzi dla losowych testów.
+       Jeżeli rozwiązanie nie jest optymalne, delta jest na tyle mała, że można ją zaakceptować.
+    3. Dla liczby elementów do 10 warto zastosować przegląd wyczerpujący,
+       ponieważ w przypadku małej liczby elementów procentowa delta błędu jest stosunkowo duża,
+       ze względu na mały mianownik.
