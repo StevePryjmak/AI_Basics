@@ -1,0 +1,33 @@
+1. Jak wartość parametru beta wpływa na szybkość dojścia do optimum i zachowanie algorytmu?
+Jakiej bety użyto dla każdej z funkcji?
+
+Wartość parametru beta wpływa na szybkość kroku, ponieważ jest współczynnikiem, który kontroluje,
+jak dużym krokiem algorytm podąża w kierunku gradientu. Jeśli beta jest mała, czas potrzebny na aproksymację do minimum będzie dłuższy.
+Z kolei, gdy beta jest zbyt duża, ruch algorytmu do punktu może stać się rozbieżny, co skutkuje oddalaniem się od optimum.
+
+Dla funkcji Booth wartości beta, które okazały się dobre, mieszczą się w przedziale od 0.001 do 0.2, przy czym 0.2 jest punktem granicznym, w którym funkcja nadal zbiega.
+
+Dla funkcji f1 odpowiednie wartości beta to 1e-8 oraz 2e-8 (3e-8 to granica zbieżności).
+
+Dla f2 zastosowano beta = 2e-18,
+
+a dla f3 beta = 2e-9.
+
+2. Zalety/wady algorytmu?
+
+Zalety:
+
+    1. Prostota implementacji: Metoda najszybszego wzrostu jest łatwa do zaimplementowania: weź x, oblicz gradient, pomnóż przeż bete odejmij od x powtóż.
+    2. Szybka konwergencja: Przy odpowiednio dobranym parametrze beta algorytm potrafi szybko zbiegać do minimum, zwłaszcza w prostszych funkcjach.
+
+Wady:
+    1. Brak gwarancji globalnego optimum: Algorytm może utknąć w lokalnych minimach, szczególnie w przypadku bardziej skomplikowanych funkcji, takich jak te z CEC2017.
+    2. Wrażliwość na dobór parametru beta: dobrać dobrą bęte jest bardzo trudno.
+
+3. Wnioski
+    1. Metoda najszybszego wzrostu, choć skuteczna w prostszych zadaniach,
+       wymaga ostrożnego doboru parametrów i może być niewystarczająca w bardziej złożonych problemach optymalizacyjnych.
+    2. Wyniki uzyskane z funkcji Booth były lepsze i bardziej stabilne w porównaniu do funkcji CEC 2017,
+       które okazały się bardziej skomplikowane i w wielu przypadkach nie pozwoliły na znalezienie optymalnych punktów.
+    3. Optymalizacja w wielu wymiarach może wymagać dodatkowych technik, takich jak zminna beta,
+       by poprawić szanse na znalezienie globalnego optimum.
