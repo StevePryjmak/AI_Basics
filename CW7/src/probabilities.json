@@ -1,0 +1,31 @@
+[
+    {
+        "id": "Chair",
+        "parents": [],
+        "probabilities": { "true": 0.8, "false": 0.2}
+    },
+    {
+        "id": "Sport",
+        "parents": [],
+        "probabilities": { "true": 0.02, "false": 0.98}
+    },
+    {
+        "id": "Back",
+        "parents": ["Chair", "Sport"],
+        "probabilities": {
+            "TT": {"true": 0.9, "false": 0.1},
+            "TF": {"true": 0.2, "false": 0.8},
+            "FT": {"true": 0.1, "false": 0.9},
+            "FF": {"true": 0.01, "false": 0.99}
+        }
+    },
+    {
+        "id": "Ache",
+        "parents": ["Back"],
+        "probabilities": {
+            "T": {"true": 0.7, "false": 0.3},
+            "F": {"true": 0.1, "false": 0.9}
+        },
+        "class": true
+    }
+]
